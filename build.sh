@@ -23,7 +23,7 @@ cp libfuse/build/util/fusermount3 magisk-rclone_$ABI/system/vendor/bin/
 chmod +x magisk-rclone_$ABI/system/vendor/bin/*
 
 # Update the updateJson field in module.prop
-UPDATE_JSON_URL="https://github.com/RafikBeng/rclone-fuse3-magisk-armeabi-v7a/releases/latest/download/update-$ABI.json"
+UPDATE_JSON_URL="https://github.com/RafikBeng/rclone-fuse3-magisk/releases/latest/download/update-$ABI.json"
 sed -i "s|^updateJson=.*|updateJson=$UPDATE_JSON_URL|" magisk-rclone_$ABI/module.prop
 
 # Generate the corresponding update.json file
@@ -31,8 +31,8 @@ cat <<EOF > update-$ABI.json
 {
   "version": "$RCLONE_VERSION",
   "versionCode": $VERSION_CODE,
-  "zipUrl": "https://github.com/RafikBeng/rclone-fuse3-magisk-armeabi-v7a/releases/download/$TAG_NAME/magisk-rclone_$ABI.zip",
-  "changelog": "https://github.com/RafikBeng/rclone-fuse3-magisk-armeabi-v7a/releases/tag/$TAG_NAME"
+  "zipUrl": "https://github.com/RafikBeng/rclone-fuse3-magisk/releases/download/$TAG_NAME/magisk-rclone_$ABI.zip",
+  "changelog": "https://github.com/RafikBeng/rclone-fuse3-magisk/releases/tag/$TAG_NAME"
 }
 EOF
 

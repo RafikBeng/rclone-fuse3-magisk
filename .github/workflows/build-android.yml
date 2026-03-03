@@ -194,7 +194,7 @@ jobs:
       - name: Upload Android binaries
         uses: actions/upload-artifact@v4
         with:
-          name: magisk-rclone-armeabi-v7a
+          name: magisk-rclone
           if-no-files-found: error
           path: "*.zip"
 

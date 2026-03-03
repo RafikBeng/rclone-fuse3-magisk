@@ -39,9 +39,9 @@ This repository builds a Magisk module that integrates Rclone with FUSE 3.17.x s
 ## Build Process
 
 ### Supported Architectures
-- `armeabi-v7a` 
-
-
+- `armeabi-v7a`
+- `arm64-v8a`
+- `x86_64`
 ### Build Steps
 
 1. **Patch libfuse**: Run `./patch.sh` to apply Android compatibility patches
@@ -129,7 +129,7 @@ This repository builds a Magisk module that integrates Rclone with FUSE 3.17.x s
 1. **Submodule Management**: The `libfuse` directory is a git submodule. Always initialize with `git submodule update --init`
 
 2. **Architecture Mapping**: 
-   - Magisk uses: `arm64-v8a`, `x86_64`
+   - Magisk uses: `armeabi-v7a`, `arm64-v8a`, `x86_64`
    - Rclone URLs use: `armv8a`, `x64`
    - NDK uses: `aarch64-linux-android`, `x86_64-linux-android`
    - Ensure mappings are consistent in scripts

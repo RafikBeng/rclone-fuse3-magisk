@@ -1,7 +1,7 @@
 
-# Rclone Magisk Module (FUSE 3.17.x Android armeabi-v7a Build)
+# Rclone Magisk Module (FUSE 3.17.x Android Build)
 
-This Magisk module integrates **Rclone with FUSE 3.17.x** into Android armeabi-v7a, allowing remote storage to be mounted as local directories.
+This Magisk module integrates **Rclone with FUSE 3.17.x** into Android, allowing remote storage to be mounted as local directories.
 
 Originally based on upstream libfuse, this project includes Android-specific patches required to build and run libfuse successfully using Android NDK.
 
@@ -22,7 +22,7 @@ It enables seamless mounting of cloud storage on Android devices.
 
 ---
 
-# What Was Modified for Android armeabi-v7a
+# What Was Modified for Android
 
 Android uses **Bionic libc**, which differs from glibc.  
 Upstream libfuse depends on features not fully supported on Android.
@@ -53,7 +53,7 @@ Applied automatically in:
 
 ---
 
-## 2️⃣ Disabled pthread Cancellation (Android armeabi-v7a Incompatible)
+## 2️⃣ Disabled pthread Cancellation (Android Incompatible)
 
 Android does not safely support:
 
@@ -204,6 +204,8 @@ Notes:
 # Current Architecture Support
 
 - armeabi-v7a
+- arm64-v8a
+- x86_64
 
 ---
 
@@ -215,4 +217,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 # Author
 
-patch by RafikBeng for armeabi-v7a from the original project https://github.com/NewFuture/rclone-fuse3-magisk.
+patched by RafikBeng from the original project https://github.com/NewFuture/rclone-fuse3-magisk.
