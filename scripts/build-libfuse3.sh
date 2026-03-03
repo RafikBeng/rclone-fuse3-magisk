@@ -18,8 +18,13 @@ if [[ -z "${platforms[$abi]}" ]]; then
   exit 1
 fi
 
-# Set the common toolchain path
-export TOOLCHAIN=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64
+# Set the common toolchain path (auto-detect host OS)
+case "$(uname -s)" in
+  Linux*)  HOST_TAG="linux-x86_64" ;;
+  Darwin*) HOST_TAG="darwin-x86_64" ;;
+  *)       HOST_TAG="linux-x86_64" ;;  # Default fallback
+esac
+export TOOLCHAIN=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/$HOST_TAG
 export PATH=$TOOLCHAIN/bin:$PATH
 export SYSROOT=$TOOLCHAIN/sysroot
 

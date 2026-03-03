@@ -1,11 +1,13 @@
 #!/bin/bash
 set -e
 # 🔥 Prepare libfuse automatically
-chmod +x scripts/prepare_libfuse.sh
-./scripts/prepare_libfuse.sh
+
 # Get the input parameters
 ABI=$1
 TAG_NAME=${TAG_NAME:-$2}
+
+chmod +x scripts/prepare_libfuse.sh
+./scripts/prepare_libfuse.sh
 
 # Read RCLONE_VERSION from magisk-rclone/module.prop
 RCLONE_VERSION=$(grep -oP '^version=\Kv.*' magisk-rclone/module.prop)
