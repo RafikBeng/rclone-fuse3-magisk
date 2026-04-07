@@ -22,6 +22,11 @@ It enables seamless mounting of cloud storage on Android devices.
 
 ---
 
+## Download
+
+https://github.com/RafikBeng/rclone-fuse3-magisk/releases/latest
+
+---
 # What Was Modified for Android
 
 Android uses **Bionic libc**, which differs from glibc.  
